@@ -1,0 +1,28 @@
+[project]
+name = "mt5-exness-bot"
+version = "0.1.0"
+description = "EMA crossover bot for an Exness MetaTrader 5 demo account"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "MetaTrader5>=5.0.45",
+  "PyYAML>=6.0.2",
+  "python-dotenv>=1.0.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+mt5-exness-bot = "mt5_exness_bot.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

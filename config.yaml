@@ -1,0 +1,27 @@
+# Demo accounts can send orders with live_trading left false.
+# A real Exness account is refused until you set this to true.
+live_trading: false
+
+# Logical names. The bot tries Exness suffixes (EURUSDm, EURUSDc, EURUSD, ...).
+symbols:
+  - EURUSD
+
+timeframe: M15
+ema_fast: 9
+ema_slow: 21
+atr_period: 14
+atr_sl_multiplier: 1.5
+reward_risk: 2.0
+
+# Percent of equity risked if the stop loss is hit. Capped by the daily loss budget.
+risk_percent: 0.5
+max_daily_loss_percent: 2.0
+
+# symbol_info.spread is in points. EURUSD around 30 is a wide-spread skip.
+# Raise this if you add gold (XAUUSD), where spreads are quoted in larger points.
+max_spread_points: 30
+
+magic: 260110
+deviation_points: 20
+poll_seconds: 5
+bars_to_load: 300
